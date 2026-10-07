@@ -5,6 +5,8 @@ category = "학사공지"
 views = 152 # 정수(int)
 is_new = True # 불리언(bool)
 
+
+
 # 2. 봇 설정값
 bot_name = "강원대 IT 소식봇"
 check_interval = 1.5 # 실수(float): 수집 주기(시간 단위)
@@ -41,3 +43,14 @@ print(views_number + 1) # 153
 # 7. 값이 아직 없는 상태
 attachment = None # 첨부 파일이 없는 공지
 print(attachment)
+
+# 8. 산술 연산자: 수집 주기와 페이지 계산
+interval_minutes = check_interval * 60 # 시간 -> 분 (90.0)
+print("수집 주기(분):", interval_minutes)
+
+total_notices = 47 # 게시판에 쌓인 공지 수
+per_page = 10 # 한 페이지에 보이는 공지 수
+full_pages = totalnotice // per_page # 몫 : 4 (꽉 찬 페이지 수)
+remain = total_notices % per_page # 나머지 : 7 (마지막 페이지의 공지 수)
+
+# 나머지는 이어서 작성
